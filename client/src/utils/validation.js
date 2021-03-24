@@ -28,18 +28,6 @@ module.exports.validateUsername = (username) => {
   return false;
 };
 
-module.exports.validatePassword = (password) => {
-  if (!password) {
-    return 'Enter a valid password.';
-  } else if (password.length < 6) {
-    return 'For security purposes we require a password to be at least 6 characters.';
-  } else if (
-    !password.match(/^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{6,}$/)
-  ) {
-    return 'A password needs to have at least one uppercase letter, one lowercase letter, one special character and one number.';
-  }
-  return false;
-};
 
 module.exports.validateBio = (bio) => {
   if (bio.length > 130) {
@@ -48,13 +36,3 @@ module.exports.validateBio = (bio) => {
   return false;
 };
 
-module.exports.validateWebsite = (website) => {
-  if (
-    !website.match(
-      /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/
-    )
-  ) {
-    return 'Please provide a valid website.';
-  }
-  return false;
-};
