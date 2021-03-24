@@ -1,0 +1,30 @@
+{
+  "name": "biodata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run client\" \"nodemon index.js\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "concurrently": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.29",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7",
+    "react-bootstrap": "^1.5.2",
+    "react-material-ui-form-validator": "^2.1.4",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0"
+  }
+}
